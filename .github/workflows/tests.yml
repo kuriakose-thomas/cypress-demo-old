@@ -12,7 +12,7 @@ jobs:
         with:          
           repository: kuriakose-thomas/cypress-code
           #ref: ${{env.CYPRESS_RESPOSITORY_BRANCH}}
-          token: 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 #${{secrets.ORG_SCOPED_GITHUB_TOKEN}}
+          #token: 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 #${{secrets.ORG_SCOPED_GITHUB_TOKEN}}
       
       - name: Cypress run
         uses: cypress-io/github-action@v5
