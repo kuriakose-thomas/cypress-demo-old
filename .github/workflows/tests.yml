@@ -4,11 +4,18 @@ jobs:
   cypress-run:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout
-        uses: actions/checkout@v1
+      #- name: Checkout
+      #  uses: actions/checkout@v1
       # https://github.com/cypress-io/github-action
+      - name: Checkout cypress repository
+        uses: actions/checkout@v3
+        with:          
+          repository: kuriakose-thomas/cypress-code
+          #ref: ${{env.CYPRESS_RESPOSITORY_BRANCH}}
+          token: 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 #${{secrets.ORG_SCOPED_GITHUB_TOKEN}}
+      
       - name: Cypress run
-        uses: cypress-io/github-action@v1
+        uses: cypress-io/github-action@v5
         with:
           record: true
         env:
