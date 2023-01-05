@@ -10,14 +10,28 @@ jobs:
       - name: Checkout cypress repository
         uses: actions/checkout@v3
         with:          
+          path: old
+      
+      - name: Checkout cypress repository
+        uses: actions/checkout@v3
+        with:          
           repository: kuriakose-thomas/cypress-code
+          path: code
           #ref: ${{env.CYPRESS_RESPOSITORY_BRANCH}}
           #token: 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 #${{secrets.ORG_SCOPED_GITHUB_TOKEN}}
+          
+      - name: CD
+        run: |
+          echo "Changing working directory..."
+          echo " Current working directory: ${{github.workspace}}"
+          echo " New working directory: '${{github.workspace}}/old'"
+          cd old
       
       - name: Cypress run
         uses: cypress-io/github-action@v5
         with:
           record: true
+          working-directory: ${{github.workspace}}/code
         env:
           # pass the Dashboard record key as an environment variable
           CYPRESS_RECORD_KEY: ${{ secrets.CYPRESS_RECORD_KEY }}
