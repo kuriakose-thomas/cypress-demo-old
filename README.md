@@ -4,7 +4,7 @@
 
 You can find all CI results recorded on the [![Cypress Dashboard](https://img.shields.io/badge/cypress-dashboard-brightgreen.svg)](https://dashboard.cypress.io/#/projects/4rweo6/runs)
 
-Take a look at the example pull request [#3](https://github.com/cypress-io/gh-action-and-gh-integration/pull/3) with Cypress GH Integration app commenting on passing run and specs or its screenshot below
+Take a look at the example pull request [#3](https://github.com/cypress-io/gh-action-and-gh-integration/pull/3) with Cypress GH Integration app commenting on passing run and specs or its screenshot below.
 
 ![Pull request checks](images/pull-request.png)
 
